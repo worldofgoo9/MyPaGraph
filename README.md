@@ -90,10 +90,15 @@ result:		tensor，目标节点的对应特征的张量，处于gpu上。
 
 例：
 qn1 = torch.arange(140,5,-1)
-r1 = st.Query(fname='label',nodes=qn1,print_time=True)
+r1 = st.Query(fname='label',nodes=qn1,print_info=True)
 
 '''
 
+
+MyPaGraph.Storage_Old:
+'''
+旧版本，所有的存储无法分离，现已弃用。
+'''
 
 ```
 
