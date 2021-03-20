@@ -1,4 +1,4 @@
-scp -r D:\BUPT\邵老师资料syx\PaGraph liuyb@10.101.168.234:/home/liuyb/program/
+
 
 python3 TrainMul.py
 
