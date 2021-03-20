@@ -11,7 +11,11 @@ An Examination For PaGraph
 | TrainMul.py  | 多进程多GPU训练                            |
 | TrainSin.py  | 单进程单GPU训练                            |
 
+**特别说明：**
 
+**图划分算法性能尚待优化，尤其当hop>=2时耗时会急剧增加，待后期使用cpp协同实现。**
+
+**多进程多GPU训练目前仅建议使用<=2个gpu，一旦gpu个数>=3，训练速度会大幅度下降，目前仍未找到原因。**
 
 ------
 
