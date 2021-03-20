@@ -1,0 +1,7 @@
+scp -r D:\BUPT\邵老师资料syx\PaGraph liuyb@10.101.168.234:/home/liuyb/program/
+
+python3 TrainMul.py
+
+python3 TrainMul.py --n-epochs=10 --cache-rate=0.24 --batch-size=256 --ngpus=-1
+
+python3 TrainMul.py --n-epochs=10 --cache-rate=0.8  --batch-size=240 --ngpus=3 --data='pubmed'

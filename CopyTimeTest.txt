@@ -1,0 +1,47 @@
+
+import argparse
+import time
+import numpy as np
+import networkx as nx
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import dgl
+from dgl.data import register_data_args
+from dgl.data import CoraGraphDataset, CiteseerGraphDataset, PubmedGraphDataset
+
+from gcn import GCN
+import time
+
+torch.cuda.is_available()
+s=torch.randn([10,10])
+b=s.to('cuda:0')
+
+
+
+t0=time.time()*1000
+A=torch.randn([1000,10000],dtype=torch.float32,requires_grad=False)
+t1=time.time()*1000
+B=A.clone()
+t2=time.time()*1000
+C=A.to('cuda:0')
+t3=time.time()*1000
+D=C.clone()
+t4=time.time()*1000
+E=D.to('cpu')
+t5=time.time()*1000
+F=E.to('cuda:0')
+t6=time.time()*1000
+
+print(t1-t0,t2-t1,t3-t2,t4-t3,t5-t4,t6-t5)
+
+'''
+runfile('D:/BUPT/Comap2021/Ref/dgl-master/examples/pytorch/gcn/train.py', wdir='D:/BUPT/Comap2021/Ref/dgl-master/examples/pytorch/gcn')
+Using backend: pytorch
+6.9814453125 0.998046875 3.988525390625 0.0 3.98974609375 2.991455078125
+
+runfile('D:/BUPT/Comap2021/Ref/dgl-master/examples/pytorch/gcn/train.py', wdir='D:/BUPT/Comap2021/Ref/dgl-master/examples/pytorch/gcn')
+Reloaded modules: gcn
+101.7275390625 9.97265625 29.919677734375 1.994140625 37.899658203125 29.919921875
+
+'''
